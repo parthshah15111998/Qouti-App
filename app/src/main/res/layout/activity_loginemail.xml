@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Loginemail">
+
+    <TextView
+        android:id="@+id/tv_login"
+        style="@style/loginText"
+        android:layout_width="84dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="98dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_welcomeNote"
+        style="@style/welcomeQouti"
+        android:layout_width="271dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_login"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_phoneNumber"
+        android:layout_width="335dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/board"
+        android:drawableStart="@drawable/ic_baseline_plus_one_24"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="@string/phoneNumber"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_welcomeNote"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="335dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/board"
+        android:ems="10"
+        android:hint="@string/password"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_phoneNumber"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_forgotPassword"
+        style="@style/forgotPassword"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_password"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        style="@style/button"
+        android:layout_width="335dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/button_boarder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_forgotPassword"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_socialMedia"
+        style="@style/socialMedia"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="110dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/img_facebook"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/facebook"
+        app:layout_constraintEnd_toStartOf="@+id/img_googlePlus"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_socialMedia"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/img_googlePlus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/google_plus"
+        app:layout_constraintEnd_toStartOf="@+id/img_apple"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_facebook"
+        app:layout_constraintTop_toBottomOf="@id/tv_socialMedia"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/img_apple"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/apple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_googlePlus"
+        app:layout_constraintTop_toBottomOf="@id/tv_socialMedia"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        style="@style/register"
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginEnd="127dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_apple"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
