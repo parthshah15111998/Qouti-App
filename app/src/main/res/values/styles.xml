@@ -34,7 +34,6 @@
     </style>
 
     <style name="button">
-        <item name="android:text">Login</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textStyle">normal</item>
@@ -53,21 +52,21 @@
     </style>
 
     <style name="register">
-        <item name="android:text">@string/newRegister</item>
         <item name="android:textColor">#3D3B35</item>
-        <item name="android:textStyle">normal|bold</item>
+        <item name="android:textStyle">normal</item>
         <item name="fontFamily">Circular Std</item>
         <item name="lineHeight">14dp</item>
+        <item name="android:textAlignment">center</item>
         <item name="android:weightSum">700 </item>
         <item name="android:textSize">16sp</item>
     </style>
 
     <style name="termCondition">
-        <item name="android:text">@string/termCondition</item>
         <item name="android:textColor">#3D3B35</item>
-        <item name="android:textStyle">normal|bold</item>
+        <item name="android:textStyle">normal</item>
         <item name="fontFamily">Circular Std</item>
         <item name="lineHeight">22dp</item>
+        <item name="android:textAlignment">center</item>
         <item name="android:weightSum">700 </item>
         <item name="android:textSize">15sp</item>
     </style>

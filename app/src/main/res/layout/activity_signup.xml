@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Signup">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <ImageButton
+        android:id="@+id/imgBtn_arrow"
+        android:layout_width="16.26dp"
+        android:layout_height="13.25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="59.03dp"
+        android:src="@drawable/path"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 
     <TextView
@@ -14,9 +30,9 @@
         android:layout_width="122dp"
         android:layout_height="42dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="98dp"
+        android:layout_marginTop="25.02dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgBtn_arrow"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -31,125 +47,157 @@
         tools:ignore="MissingConstraints" />
 
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_regName"
         android:layout_width="335dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="20dp"
         app:boxBackgroundColor="#FFFFFF"
         app:boxBackgroundMode="outline"
-        android:layout_marginTop="47dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        android:hint="Name"
+        app:boxCornerRadiusTopEnd="23dp"
+        app:boxCornerRadiusTopStart="23dp"
+        app:boxCornerRadiusBottomStart="23dp"
+        app:boxCornerRadiusBottomEnd="23dp"
         app:endIconTint="@color/teal_700"
-        app:startIconTint="@color/teal_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_regWelcomeNote"
+        app:startIconTint="@color/teal_700"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/board"
             android:hint="Name"
-            android:textSize="18sp"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName"
+            android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_regEmail"
         android:layout_width="335dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="20dp"
+        app:boxCornerRadiusTopEnd="23dp"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:boxCornerRadiusTopStart="23dp"
+        app:boxCornerRadiusBottomStart="23dp"
+        app:boxCornerRadiusBottomEnd="23dp"
+        android:hint="Email"
         app:boxBackgroundColor="#FFFFFF"
         app:boxBackgroundMode="outline"
-        android:layout_marginTop="7dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         app:endIconTint="@color/teal_700"
-        app:startIconTint="@color/teal_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_regName"
+        app:startIconTint="@color/teal_700"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/board"
             android:hint="Email"
-            android:textSize="18sp"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName"
+            android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_regPhoneNumber"
         android:layout_width="335dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="20dp"
+        android:hint="PhoneNumber"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:boxCornerRadiusTopEnd="23dp"
+        app:boxCornerRadiusTopStart="23dp"
+        app:boxCornerRadiusBottomStart="23dp"
+        app:boxCornerRadiusBottomEnd="23dp"
+        app:prefixText="+1 |"
         app:boxBackgroundColor="#FFFFFF"
         app:boxBackgroundMode="outline"
-        android:layout_marginTop="7dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         app:endIconTint="@color/teal_700"
-        app:startIconTint="@color/teal_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_regEmail"
+        app:startIconTint="@color/teal_700"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/board"
+            android:drawableStart="@drawable/plus_one"
+            android:drawablePadding="12dp"
             android:hint="PhoneNumber"
-            android:textSize="18sp"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName"
+            android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_regPassword"
         android:layout_width="335dp"
         android:layout_height="wrap_content"
-        app:boxBackgroundColor="#FFFFFF"
-        app:boxBackgroundMode="outline"
-        android:layout_marginTop="7dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="27dp"
         android:layout_marginEnd="20dp"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:boxCornerRadiusTopEnd="23dp"
+        app:boxCornerRadiusTopStart="23dp"
+        app:boxCornerRadiusBottomStart="23dp"
+        app:boxCornerRadiusBottomEnd="23dp"
+        android:hint="Password"
+        app:boxBackgroundMode="outline"
         app:endIconTint="@color/teal_700"
-        app:startIconTint="@color/teal_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_regPhoneNumber"
+        app:startIconTint="@color/teal_700"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/board"
             android:hint="Password"
-            android:textSize="18sp"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName"
+            android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_regConfirmPassword"
         android:layout_width="335dp"
         android:layout_height="wrap_content"
-        app:boxBackgroundColor="#FFFFFF"
-        app:boxBackgroundMode="outline"
-        android:layout_marginTop="7dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="27dp"
         android:layout_marginEnd="20dp"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:boxCornerRadiusTopEnd="23dp"
+        app:boxCornerRadiusTopStart="23dp"
+        app:boxCornerRadiusBottomStart="23dp"
+        app:boxCornerRadiusBottomEnd="23dp"
+        android:hint="Confirm Password"
+        app:boxBackgroundMode="outline"
         app:endIconTint="@color/teal_700"
-        app:startIconTint="@color/teal_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_regPassword"
+        app:startIconTint="@color/teal_700"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/board"
-            android:hint="ConfirmPassword"
-            android:textSize="18sp"
-            android:inputType="textPersonName"/>
+            android:hint="Confirm Password"
+            android:inputType="textPersonName"
+            android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -157,14 +205,42 @@
         style="@style/termCondition"
         android:layout_width="309dp"
         android:layout_height="44dp"
-        android:layout_marginTop="25dp"
         android:layout_marginStart="33dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="33dp"
+        android:text="@string/termCondition"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_regConfirmPassword"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_regConfirmPassword"
         tools:ignore="MissingConstraints" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_register"
+        style="@style/button"
+        android:layout_width="335dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/button_boarder"
+        android:text="Register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_termCondition"
+        tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/tv_login"
+        style="@style/termCondition"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginEnd="127dp"
+        android:text="@string/newRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_register"
+        tools:ignore="MissingConstraints" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

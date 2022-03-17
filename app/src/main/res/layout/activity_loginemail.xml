@@ -28,39 +28,69 @@
         app:layout_constraintTop_toBottomOf="@id/tv_login"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/et_phoneNumber"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_PhoneNumber"
         android:layout_width="335dp"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="47dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/board"
-        android:drawableStart="@drawable/ic_baseline_plus_one_24"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:hint="@string/phoneNumber"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        android:hint="PhoneNumber"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:boxCornerRadiusTopEnd="23dp"
+        app:boxCornerRadiusTopStart="23dp"
+        app:boxCornerRadiusBottomStart="23dp"
+        app:boxCornerRadiusBottomEnd="23dp"
+        app:prefixText="+1 |"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="outline"
+        app:endIconTint="@color/teal_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_welcomeNote"
-        tools:ignore="MissingConstraints" />
+        app:startIconTint="@color/teal_700"
+        tools:ignore="MissingConstraints">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/plus_one"
+            android:drawablePadding="12dp"
+            android:hint="PhoneNumber"
+            android:inputType="textPersonName"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_password"
         android:layout_width="335dp"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="27dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/board"
-        android:ems="10"
-        android:hint="@string/password"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:boxCornerRadiusTopEnd="23dp"
+        app:boxCornerRadiusTopStart="23dp"
+        app:boxCornerRadiusBottomStart="23dp"
+        app:boxCornerRadiusBottomEnd="23dp"
+        android:hint="Password"
+        app:boxBackgroundMode="outline"
+        app:endIconTint="@color/teal_700"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_phoneNumber"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@id/et_PhoneNumber"
+        app:startIconTint="@color/teal_700"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPersonName"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/tv_forgotPassword"
@@ -82,6 +112,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/button_boarder"
+        android:text="Login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_forgotPassword"
         tools:ignore="MissingConstraints" />
@@ -139,16 +170,17 @@
 
     <TextView
         android:id="@+id/tv_register"
+        style="@style/termCondition"
+        android:text="@string/newRegister"
+        android:textAlignment="center"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
-        style="@style/register"
-        android:layout_marginTop="110dp"
-        android:layout_marginBottom="30dp"
         android:layout_marginStart="107dp"
         android:layout_marginEnd="127dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_apple"
+        app:layout_constraintTop_toBottomOf="@id/img_googlePlus"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
