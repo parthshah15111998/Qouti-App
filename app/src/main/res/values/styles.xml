@@ -71,6 +71,9 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <style name="ThemeOverlay.AppTheme.TextInputEditText.Outlined" parent="">
+        <item name="colorControlActivated">@color/black</item>
+    </style>
 
 
 

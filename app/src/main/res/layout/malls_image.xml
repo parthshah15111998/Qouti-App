@@ -1,73 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/img_malls"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
-        <ImageView
-            android:id="@+id/img_malls"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:src="@mipmap/ic_launcher"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/tv_mallName"
+        style="@style/socialMedia"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="9dp"
+        android:text="WalMart"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/img_malls"
+        app:layout_constraintTop_toTopOf="@id/img_malls"
+        tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/tv_mallName"
-            style="@style/socialMedia"
-            android:layout_width="66dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="9dp"
-            android:text="WallMart"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@id/img_malls"
-            app:layout_constraintTop_toTopOf="@id/img_malls"
-            tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/tv_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="new"
+        app:layout_constraintStart_toEndOf="@id/img_malls"
+        app:layout_constraintTop_toBottomOf="@id/tv_mallName"
+        tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/tv_new"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="new"
-            app:layout_constraintStart_toEndOf="@id/img_malls"
-            app:layout_constraintTop_toBottomOf="@id/tv_mallName"
-            tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/tv_daysName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="fridays"
+        app:layout_constraintStart_toEndOf="@id/tv_new"
+        app:layout_constraintTop_toBottomOf="@id/tv_mallName"
+        tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/tv_daysName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:text="Friday"
-            app:layout_constraintStart_toEndOf="@id/tv_new"
-            app:layout_constraintTop_toBottomOf="@id/tv_mallName"
-            tools:ignore="MissingConstraints" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/images"
-            app:layout_constraintTop_toBottomOf="@id/img_malls"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="15dp"
-            android:orientation="horizontal"
-            tools:listitem="@layout/image"
-            android:layout_marginTop="14dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/images"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_malls"
+        tools:listitem="@layout/image" />
 
 
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

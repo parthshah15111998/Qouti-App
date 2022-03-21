@@ -1,24 +1,24 @@
 package com.example.qoutiapp
 
-import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.view.WindowManager
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.example.qoutiapp.databinding.ActivityMainBinding
+import com.example.qoutiapp.fragment.loginEmailFragment
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.splesh_activity_main)
+        setContentView(R.layout.activity_main)
 
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
-        Handler().postDelayed({
-            val intent = Intent(this, Loginemail::class.java)
-            startActivity(intent)
-            finish()
-        }, 3000)
+        val fragment = loginEmailFragment()
+        supportFragmentManager.beginTransaction().replace(R.id.frameLayout, fragment).commit()
+
+
+
     }
 }
+

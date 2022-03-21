@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_menu">
+    <fragment
+        android:id="@+id/loginEmailFragment"
+        android:name="com.example.qoutiapp.fragment.loginEmailFragment"
+        android:label="loginEmailFragment" >
+        <action
+            android:id="@+id/action_loginEmailFragment_to_signUpFragment2"
+            app:destination="@id/signUpFragment2" />
+        <action
+            android:id="@+id/action_loginEmailFragment_to_browserFragment25"
+            app:destination="@id/browserFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment2"
+        android:name="com.example.qoutiapp.fragment.signUpFragment"
+        android:label="signUpFragment" >
+        <action
+            android:id="@+id/action_signUpFragment2_to_browserFragment2"
+            app:destination="@id/browserFragment2" />
+        <action
+            android:id="@+id/action_signUpFragment2_to_loginEmailFragment2"
+            app:destination="@id/loginEmailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/browserFragment2"
+        android:name="com.example.qoutiapp.fragment.browserFragment"
+        android:label="browserFragment" />
+</navigation>
