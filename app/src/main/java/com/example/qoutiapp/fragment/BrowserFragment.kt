@@ -5,12 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.qoutiapp.R
-import com.example.qoutiapp.databinding.ActivityBrowserBinding
 import com.example.qoutiapp.databinding.FragmentBrowserBinding
 
-class browserFragment : Fragment() {
-        private lateinit var binding: FragmentBrowserBinding
+class BrowserFragment : Fragment() {
+    private lateinit var binding: FragmentBrowserBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -21,6 +19,7 @@ class browserFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding= FragmentBrowserBinding.inflate(inflater,container,false)
+
         return binding.root
     }
 }

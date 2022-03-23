@@ -2,31 +2,32 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_menu">
+    android:id="@+id/nav_menu"
+    app:startDestination="@id/loginFragment">
     <fragment
-        android:id="@+id/loginEmailFragment"
-        android:name="com.example.qoutiapp.fragment.loginEmailFragment"
-        android:label="loginEmailFragment" >
+        android:id="@+id/loginFragment"
+        android:name="com.example.qoutiapp.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginEmailFragment_to_signUpFragment2"
-            app:destination="@id/signUpFragment2" />
-        <action
-            android:id="@+id/action_loginEmailFragment_to_browserFragment25"
-            app:destination="@id/browserFragment2" />
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
     <fragment
-        android:id="@+id/signUpFragment2"
-        android:name="com.example.qoutiapp.fragment.signUpFragment"
-        android:label="signUpFragment" >
+        android:id="@+id/signUpFragment"
+        android:name="com.example.qoutiapp.fragment.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
         <action
-            android:id="@+id/action_signUpFragment2_to_browserFragment2"
+            android:id="@+id/action_signUpFragment_to_browserFragment2"
             app:destination="@id/browserFragment2" />
         <action
-            android:id="@+id/action_signUpFragment2_to_loginEmailFragment2"
-            app:destination="@id/loginEmailFragment" />
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/browserFragment2"
-        android:name="com.example.qoutiapp.fragment.browserFragment"
-        android:label="browserFragment" />
+        android:name="com.example.qoutiapp.fragment.BrowserFragment"
+        android:label="fragment_browser"
+        tools:layout="@layout/fragment_browser" />
 </navigation>

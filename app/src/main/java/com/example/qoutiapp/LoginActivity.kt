@@ -10,7 +10,7 @@ import android.text.style.StyleSpan
 import android.text.style.UnderlineSpan
 import com.example.qoutiapp.databinding.ActivityLoginemailBinding
 
-class Loginemail : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginemailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,10 +18,12 @@ class Loginemail : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.tvRegister.setOnClickListener {
-            val intent = Intent(this, Signup::class.java)
+            val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
             finish()
         }
+
+
 
 
         val spannable = SpannableString("New user? Register")

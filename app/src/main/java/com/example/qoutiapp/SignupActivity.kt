@@ -1,17 +1,16 @@
 package com.example.qoutiapp
 
-import android.graphics.Color
+import android.content.Intent
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.text.style.UnderlineSpan
 import com.example.qoutiapp.databinding.ActivitySignupBinding
 
-class Signup : AppCompatActivity() {
+class SignupActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignupBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,5 +54,10 @@ class Signup : AppCompatActivity() {
         )
         binding.tvTermCondition.text = spannable
         binding.tvLogin.text=spannable2
+        binding.btnRegister.setOnClickListener {
+            val intent = Intent(this, BrowserActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }

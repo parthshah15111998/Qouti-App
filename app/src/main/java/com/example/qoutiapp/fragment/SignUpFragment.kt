@@ -10,11 +10,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.example.qoutiapp.R
-import com.example.qoutiapp.databinding.ActivitySignupBinding
 import com.example.qoutiapp.databinding.FragmentSignUpBinding
 
-class signUpFragment : Fragment() {
+
+class SignUpFragment : Fragment() {
+
     private lateinit var binding: FragmentSignUpBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,6 +66,12 @@ class signUpFragment : Fragment() {
             Spannable.SPAN_INCLUSIVE_EXCLUSIVE
         )
         binding.tvTermCondition.text = spannable
+        binding.tvLogin.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.action_signUpFragment_to_loginFragment)
+        }
+        binding.btnRegister.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.action_signUpFragment_to_browserFragment2)
+        }
         binding.tvLogin.text=spannable2
         return binding.root
     }
