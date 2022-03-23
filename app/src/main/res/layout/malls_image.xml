@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="New"
+            android:visibility="visible"
             app:layout_constraintStart_toEndOf="@id/img_malls"
             app:layout_constraintTop_toBottomOf="@id/tv_mallName"
             tools:ignore="MissingConstraints" />
@@ -50,7 +51,7 @@
             android:id="@+id/tv_daysName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="6dp"
             android:text="Friday"
             app:layout_constraintStart_toEndOf="@id/tv_new"
             app:layout_constraintTop_toBottomOf="@id/tv_mallName"

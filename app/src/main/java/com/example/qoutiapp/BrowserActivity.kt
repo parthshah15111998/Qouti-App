@@ -27,8 +27,14 @@ class BrowserActivity : AppCompatActivity() {
         var adapter = MallAdapter(
             listOf(
                 Shop(
-                    "name", "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png", "Fridays", false,
-                    listOf("https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png", "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png")
+                    "name",
+                    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+                    "Fridays",
+                    false,
+                    listOf(
+                        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg",
+                        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+                    )
                 )
             )
         )

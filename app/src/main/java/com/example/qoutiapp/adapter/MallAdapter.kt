@@ -2,6 +2,7 @@ package com.example.qoutiapp.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View.GONE
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -34,14 +35,14 @@ class MallAdapter(private val dataList: List<Shop>) : RecyclerView.Adapter<ViewH
         @SuppressLint("SetTextI18n")
         fun bind(dataList: Shop) {
             Glide.with(itemView.context)
-                .load("https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png${dataList.url}")
+                .load("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg${dataList.url}")
                 .into(binding.imgMalls)
             binding.tvMallName.text = dataList.name
 
             if (dataList.new) {
                 binding.tvNew.text = "New " + dataList.new
             }else{
-
+                binding.tvNew.visibility=GONE
             }
             binding.tvDaysName.text =  dataList.days
         }

@@ -6,7 +6,7 @@ data class Shop(
     var url: String,
     var days: String,
     var new: Boolean, val list: List<String>
-) {
+)
 
 
-}
+
