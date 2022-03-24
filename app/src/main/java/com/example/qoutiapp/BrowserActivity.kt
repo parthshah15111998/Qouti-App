@@ -22,7 +22,7 @@ class BrowserActivity : AppCompatActivity() {
             LinearLayoutManager.VERTICAL, false
         )
 
-        binding.rcyItem.layoutManager = layoutManager
+//        binding.rcyItem.layoutManager = layoutManager
 
         var adapter = MallAdapter(
             listOf(
@@ -38,6 +38,6 @@ class BrowserActivity : AppCompatActivity() {
                 )
             )
         )
-        binding.rcyItem.adapter = adapter
+//        binding.rcyItem.adapter = adapter
     }
 }

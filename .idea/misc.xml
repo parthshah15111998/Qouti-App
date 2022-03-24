@@ -7,7 +7,7 @@
         <entry key="app/src/main/res/drawable/button_boarder.xml" value="0.123" />
         <entry key="app/src/main/res/layout-v24/activity_loginemail.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout-v28/activity_browser.xml" value="0.18072916666666666" />
-        <entry key="app/src/main/res/layout/activity_browser.xml" value="0.24299719887955182" />
+        <entry key="app/src/main/res/layout/activity_browser.xml" value="0.21" />
         <entry key="app/src/main/res/layout/activity_loginemail.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.22" />
@@ -20,6 +20,7 @@
         <entry key="app/src/main/res/layout/image.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/items_mall.xml" value="0.25" />
         <entry key="app/src/main/res/layout/login_email.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/loginsignup_activity.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/malls_image.xml" value="0.18" />
         <entry key="app/src/main/res/layout/splesh_activity_main.xml" value="0.25" />
       </map>

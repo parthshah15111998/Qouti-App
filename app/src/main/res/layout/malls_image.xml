@@ -11,7 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/img_malls"
@@ -60,10 +60,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/images"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="14dp"
-            android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/img_malls"
             tools:listitem="@layout/image" />
