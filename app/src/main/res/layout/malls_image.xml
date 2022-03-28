@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="data"
             type="com.example.qoutiapp.modelclass.Shop" />
@@ -66,6 +67,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/img_malls"
             tools:listitem="@layout/image" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@drawable/shadow"
+            app:layout_constraintTop_toBottomOf="@id/images" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

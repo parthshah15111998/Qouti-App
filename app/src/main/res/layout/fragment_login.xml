@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.LoginFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".fragment.LoginFragment">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/tv_login"
             style="@style/loginText"
-            android:layout_width="84dp"
-            android:layout_height="42dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="98dp"
+            android:layout_marginTop="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
@@ -20,8 +25,8 @@
         <TextView
             android:id="@+id/tv_welcomeNote"
             style="@style/welcomeQouti"
-            android:layout_width="271dp"
-            android:layout_height="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,67 +35,63 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_PhoneNumber"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="335dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="47dp"
             android:layout_marginEnd="20dp"
             android:hint="PhoneNumber"
-            app:boxStrokeColor="#CDCDCD"
-            app:hintTextColor="@color/black"
+            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+            app:boxCornerRadiusBottomEnd="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
             app:boxCornerRadiusTopEnd="30dp"
             app:boxCornerRadiusTopStart="30dp"
-            app:boxCornerRadiusBottomStart="30dp"
-            app:boxCornerRadiusBottomEnd="30dp"
-            app:prefixText="+1 |"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
-            app:boxBackgroundColor="#FFFFFF"
-            app:boxBackgroundMode="outline"
-            app:endIconTint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:expandedHintEnabled="false"
+            app:hintTextColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_welcomeNote"
-            app:startIconTint="@color/black"
+            app:placeholderText="@string/phoneNumber"
+            app:placeholderTextColor="#BDBDBD"
+            app:prefixText="+1 ^ |"
+            app:prefixTextColor="@color/black"
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/plus_one"
-                android:drawablePadding="12dp"
-                android:hint="PhoneNumber"
-                android:inputType="textPersonName"
+                android:inputType="phone"
                 android:textSize="18sp" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/et_password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="335dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="27dp"
             android:layout_marginEnd="20dp"
-            app:boxBackgroundColor="#FFFFFF"
-            app:boxStrokeColor="#CDCDCD"
-            app:hintTextColor="@color/black"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/password"
             android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+            app:boxCornerRadiusBottomEnd="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
             app:boxCornerRadiusTopEnd="30dp"
             app:boxCornerRadiusTopStart="30dp"
-            app:boxCornerRadiusBottomStart="30dp"
-            app:boxCornerRadiusBottomEnd="30dp"
-            android:hint="Password"
-            app:boxBackgroundMode="outline"
-            app:endIconTint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:expandedHintEnabled="false"
+            app:hintTextColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_PhoneNumber"
-            app:startIconTint="@color/black"
+            app:placeholderText="@string/password"
+            app:placeholderTextColor="#BDBDBD"
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
                 android:inputType="textPersonName"
                 android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -99,7 +100,7 @@
         <TextView
             android:id="@+id/tv_forgotPassword"
             style="@style/forgotPassword"
-            android:layout_width="131dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="122dp"
             android:layout_marginTop="20dp"
@@ -115,6 +116,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="20dp"
+            android:gravity="center"
             android:background="@drawable/button_boarder"
             android:text="Login"
             app:layout_constraintStart_toStartOf="parent"
@@ -124,7 +126,7 @@
         <TextView
             android:id="@+id/tv_socialMedia"
             style="@style/socialMedia"
-            android:layout_width="157dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="110dp"
             android:layout_marginTop="55dp"
@@ -133,7 +135,7 @@
             app:layout_constraintTop_toBottomOf="@id/btn_login"
             tools:ignore="MissingConstraints" />
 
-        <ImageButton
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_facebook"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -147,7 +149,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_socialMedia"
             tools:ignore="MissingConstraints" />
 
-        <ImageButton
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_googlePlus"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -160,7 +162,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_socialMedia"
             tools:ignore="MissingConstraints" />
 
-        <ImageButton
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_apple"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -175,16 +177,17 @@
         <TextView
             android:id="@+id/tv_register"
             style="@style/termCondition"
-            android:text="@string/newRegister"
-            android:textAlignment="center"
-            android:layout_width="141dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="107dp"
+            android:layout_marginTop="115dp"
             android:layout_marginEnd="127dp"
-            android:layout_marginTop="60dp"
+            android:text="@string/newRegister"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/img_googlePlus"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

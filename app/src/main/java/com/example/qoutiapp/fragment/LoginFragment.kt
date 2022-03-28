@@ -34,13 +34,13 @@ class LoginFragment : Fragment() {
         spannable.setSpan(
             UnderlineSpan(),
             10, // start
-            17, // end
+            18, // end
             Spannable.SPAN_INCLUSIVE_EXCLUSIVE
         )
         spannable.setSpan(
             StyleSpan(Typeface.BOLD_ITALIC),
             10, // start
-            17, // end
+            18, // end
             Spannable.SPAN_INCLUSIVE_EXCLUSIVE
         )
         binding.tvRegister.text = spannable

@@ -133,7 +133,7 @@
         app:layout_constraintTop_toBottomOf="@id/btn_login"
         tools:ignore="MissingConstraints" />
 
-    <ImageButton
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_facebook"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -147,7 +147,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_socialMedia"
         tools:ignore="MissingConstraints" />
 
-    <ImageButton
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_googlePlus"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -160,7 +160,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_socialMedia"
         tools:ignore="MissingConstraints" />
 
-    <ImageButton
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_apple"
         android:layout_width="50dp"
         android:layout_height="50dp"
