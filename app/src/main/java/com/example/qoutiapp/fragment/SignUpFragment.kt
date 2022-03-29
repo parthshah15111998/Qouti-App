@@ -75,7 +75,10 @@ class SignUpFragment : Fragment() {
         binding.tvTermCondition.highlightColor = Color.TRANSPARENT
 
 
-
+        binding.btnRegister.setOnClickListener {
+            Navigation.findNavController(binding.root)
+                .navigate(R.id.action_signUpFragment_to_browserFragment2)
+        }
 
         return binding.root
     }
