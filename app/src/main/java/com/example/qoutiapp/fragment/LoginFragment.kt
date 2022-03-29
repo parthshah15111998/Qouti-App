@@ -1,17 +1,22 @@
 package com.example.qoutiapp.fragment
 
+import android.content.Intent
+import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
-import android.text.Spannable
 import android.text.SpannableString
+import android.text.Spanned
+import android.text.TextPaint
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
-import android.text.style.UnderlineSpan
-import androidx.fragment.app.Fragment
+import android.text.style.TypefaceSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.example.qoutiapp.R
 import com.example.qoutiapp.databinding.FragmentLoginBinding
 
@@ -29,25 +34,20 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= FragmentLoginBinding.inflate(inflater,container,false)
-        val spannable = SpannableString("New user? Register")
-        spannable.setSpan(
-            UnderlineSpan(),
-            10, // start
-            18, // end
-            Spannable.SPAN_INCLUSIVE_EXCLUSIVE
-        )
-        spannable.setSpan(
-            StyleSpan(Typeface.BOLD_ITALIC),
-            10, // start
-            18, // end
-            Spannable.SPAN_INCLUSIVE_EXCLUSIVE
-        )
-        binding.tvRegister.text = spannable
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
 
-        binding.tvRegister.setOnClickListener {
-           Navigation.findNavController(binding.root).navigate(R.id.action_loginFragment_to_signUpFragment)
+        val ss = SpannableString("New user? Register")
+        val clickableSpan: ClickableSpan = object : ClickableSpan() {
+            override fun onClick(p0: View) {
+                Navigation.findNavController(binding.root)
+                    .navigate(R.id.action_loginFragment_to_signUpFragment)
+            }
         }
+        ss.setSpan(clickableSpan, 10, 18, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        ss.setSpan(StyleSpan(Typeface.BOLD_ITALIC), 10, 18, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        binding.tvRegister.text = ss
+        binding.tvRegister.movementMethod = LinkMovementMethod.getInstance()
+        binding.tvRegister.highlightColor = Color.TRANSPARENT
 
         return binding.root
     }

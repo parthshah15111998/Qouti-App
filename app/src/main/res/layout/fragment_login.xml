@@ -47,9 +47,10 @@
             app:boxCornerRadiusBottomStart="30dp"
             app:boxCornerRadiusTopEnd="30dp"
             app:boxCornerRadiusTopStart="30dp"
-            app:boxStrokeColor="@color/black"
+            app:boxStrokeColor="#000000"
             app:expandedHintEnabled="false"
             app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_welcomeNote"
             app:placeholderText="@string/phoneNumber"
@@ -83,6 +84,8 @@
             app:boxStrokeColor="@color/black"
             app:expandedHintEnabled="false"
             app:hintTextColor="@color/black"
+            app:passwordToggleEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_PhoneNumber"
             app:placeholderText="@string/password"
@@ -92,7 +95,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
+                android:inputType="textPassword"
                 android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -119,6 +122,7 @@
             android:gravity="center"
             android:background="@drawable/button_boarder"
             android:text="Login"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_forgotPassword"
             tools:ignore="MissingConstraints" />
@@ -131,6 +135,7 @@
             android:layout_marginStart="110dp"
             android:layout_marginTop="55dp"
             android:layout_marginEnd="110dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_login"
             tools:ignore="MissingConstraints" />
@@ -142,6 +147,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="15dp"
             android:src="@drawable/facebook"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/img_googlePlus"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
@@ -156,6 +162,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="15dp"
             android:src="@drawable/google_plus"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/img_apple"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/img_facebook"
@@ -182,6 +189,7 @@
             android:layout_marginStart="107dp"
             android:layout_marginTop="115dp"
             android:layout_marginEnd="127dp"
+            android:textColorLink="#050505"
             android:text="@string/newRegister"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"

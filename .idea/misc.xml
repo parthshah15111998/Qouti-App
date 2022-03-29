@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/board.xml" value="0.123" />
         <entry key="app/src/main/res/drawable/button_boarder.xml" value="0.123" />
+        <entry key="app/src/main/res/drawable/from_left.xml" value="0.1365" />
         <entry key="app/src/main/res/drawable/shdow.xml" value="0.1365" />
         <entry key="app/src/main/res/layout-v24/activity_loginemail.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout-v28/activity_browser.xml" value="0.18072916666666666" />
@@ -14,7 +15,7 @@
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/fragment_browser.xml" value="0.18072916666666666" />
-        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.1482905982905983" />
         <entry key="app/src/main/res/layout/fragment_login_email.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.18072916666666666" />
