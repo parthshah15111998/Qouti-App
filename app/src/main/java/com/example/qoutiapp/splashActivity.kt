@@ -21,13 +21,13 @@ class splashActivity : AppCompatActivity() {
         binding= ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.to_right)
-        binding.SplashScreenImage.startAnimation(slideAnimation)
+        val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.top_animation)
+        binding.SplashScreenImage.setAnimation(slideAnimation);
         
         Handler().postDelayed({
             val intent = Intent(this, LoginSignUpActivity::class.java)
             startActivity(intent)
             finish()
-        }, 3000)
+        }, 4000)
     }
 }

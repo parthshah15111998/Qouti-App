@@ -1,5 +1,6 @@
 package com.example.qoutiapp.fragment
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
@@ -15,8 +16,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.qoutiapp.R
 import com.example.qoutiapp.databinding.FragmentLoginBinding
 
@@ -50,6 +53,14 @@ class LoginFragment : Fragment() {
         binding.tvRegister.highlightColor = Color.TRANSPARENT
 
         return binding.root
+    }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                getActivity()?.finish ()
+            }
+        })
     }
 
 }
