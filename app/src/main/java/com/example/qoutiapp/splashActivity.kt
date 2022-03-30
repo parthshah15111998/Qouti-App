@@ -15,19 +15,17 @@ import com.example.qoutiapp.databinding.ActivitySplashBinding
 
 
 class splashActivity : AppCompatActivity() {
-    private lateinit var binding:ActivitySplashBinding
+    private lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivitySplashBinding.inflate(layoutInflater)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.top_animation)
-        binding.SplashScreenImage.setAnimation(slideAnimation);
-        
         Handler().postDelayed({
             val intent = Intent(this, LoginSignUpActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
             finish()
-        }, 4000)
+        }, 2000)
     }
 }
