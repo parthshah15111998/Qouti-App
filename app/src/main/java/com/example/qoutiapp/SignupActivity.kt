@@ -18,7 +18,7 @@ class SignupActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val spannable = SpannableString("By clicking on sign up button, you agree to our Terms Conditions & Privacy Policy")
-        val spannable2= SpannableString("Existing user? Login")
+        val spannable2= SpannableString("Existing user? LoginRequest")
         spannable.setSpan(UnderlineSpan(),
             48, // start
             64, // end

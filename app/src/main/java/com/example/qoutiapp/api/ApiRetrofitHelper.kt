@@ -8,15 +8,21 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ApiRetrofitHelper {
 
     companion object{
-        val BASE_URL = "http://159.89.167.87/qouti/api/login"
+        val BASE_URL = "http://159.89.167.87/qouti/api/"
 
-        var logger = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-        var okHttpClient: OkHttpClient.Builder = OkHttpClient.Builder().addInterceptor(logger)
+       val interceptor : HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
+           level = HttpLoggingInterceptor.Level.BASIC
+       }
+
+        val client : OkHttpClient = OkHttpClient.Builder().apply {
+            addInterceptor(interceptor)
+        }.build()
+
 
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .client(okHttpClient.build())
+            .client(client)
             .build()
 
     }

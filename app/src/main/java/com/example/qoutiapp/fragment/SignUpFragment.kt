@@ -38,7 +38,7 @@ class SignUpFragment : Fragment() {
                 .navigate(R.id.action_signUpFragment_to_loginFragment)
         }
 
-        val tv_login = SpannableString("Existing user? Login")
+        val tv_login = SpannableString("Existing user? LoginRequest")
         val tv_loginclickableSpan: ClickableSpan = object : ClickableSpan() {
             override fun onClick(p0: View) {
                 Navigation.findNavController(binding.root)

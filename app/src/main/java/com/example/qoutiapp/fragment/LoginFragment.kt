@@ -1,6 +1,7 @@
 package com.example.qoutiapp.fragment
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +22,8 @@ import com.example.qoutiapp.R
 import com.example.qoutiapp.api.ApiInterFace
 import com.example.qoutiapp.api.ApiRetrofitHelper
 import com.example.qoutiapp.databinding.FragmentLoginBinding
-import com.example.qoutiapp.modelclass.Login
+import com.example.qoutiapp.modelclass.LoginRequest
+import com.example.qoutiapp.modelclass.LoginResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,7 +32,7 @@ import retrofit2.Response
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
-
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -40,6 +43,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
+        sharedPreferences= requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE)
 
         val ss = SpannableString("New user? Register")
         val clickableSpan: ClickableSpan = object : ClickableSpan() {
@@ -55,41 +59,49 @@ class LoginFragment : Fragment() {
         binding.tvRegister.highlightColor = Color.TRANSPARENT
 
         binding.btnLogin.setOnClickListener {
-            Navigation.findNavController(binding.root)
-                .navigate(R.id.action_loginFragment_to_browserFragment2)
 
+            if (binding.etPhoneNumber.editText?.text?.isEmpty()!! &&
+                binding.etPassword.editText?.text?.isEmpty()!!
+            ) {
+                Toast.makeText(context, "Please enter both the values", Toast.LENGTH_SHORT).show()
+            } else {
+                LoginApi(
+                    binding.etPhoneNumber.prefixText.toString(),
+                    binding.etPhoneNumber.editText?.text.toString(),
+                    binding.etPassword.editText?.text.toString()
+                )
+            }//9638134029","password": "Letsdoit@123
         }
-
-
         return binding.root
     }
 
-    private fun LoginApi(country_code:String,user_mobile:String,password:String) {
-        val apiInterFace=ApiRetrofitHelper.retrofit.create(ApiInterFace::class.java)
+    private fun LoginApi(country_code: String, user_mobile: String, password: String) {
+        val apiInterFace = ApiRetrofitHelper.retrofit.create(ApiInterFace::class.java)
 
-        val call:Call<Login.Data?>?=apiInterFace.createPost(Login.Data(country_code,user_mobile,password))
+        val call: Call<LoginResponse?>? =
+            apiInterFace.createPost(LoginRequest.Data(country_code, user_mobile, password))
 
-        call!!.enqueue(object : Callback<Login.Data?> {
-            override fun onResponse(call: Call<Login.Data?>, response: Response<Login.Data?>) {
-                val responseFromApi:Login.Data=response.body()!!
-
-                if (response.isSuccessful){
-                    val responseString = """
-              ${response.code()}
-              ${responseFromApi.country_code}
-             ${responseFromApi.user_mobile}
-              ${responseFromApi.password}
-             """.trimIndent()
-
-                Toast.makeText(context, responseString.toString(), Toast.LENGTH_SHORT).show()
-                }else{
-                    Toast.makeText(context, "message", Toast.LENGTH_SHORT).show()
+        call!!.enqueue(object : Callback<LoginResponse?> {
+            override fun onResponse(
+                call: Call<LoginResponse?>,
+                response: Response<LoginResponse?>
+            ) {
+                val responseFromApi: LoginResponse = response.body()!!
+                if (response.isSuccessful) {
+                    val editor:SharedPreferences.Editor=sharedPreferences.edit()
+                    editor.putString("countryCode", country_code)
+                    editor.putString("MobileNumber",user_mobile)
+                    editor.putString("password",password)
+                    editor.apply()
+                    Navigation.findNavController(binding.root)
+                        .navigate(R.id.action_loginFragment_to_signUpFragment)
+                } else {
                 }
-
             }
 
-            override fun onFailure(call: Call<Login.Data?>, t: Throwable) {
-                Toast.makeText(context, t.message, Toast.LENGTH_SHORT).show()
+            override fun onFailure(call: Call<LoginResponse?>, t: Throwable) {
+                Toast.makeText(context, "failur message", Toast.LENGTH_SHORT).show()
+
             }
         })
 
@@ -99,7 +111,7 @@ class LoginFragment : Fragment() {
         super.onAttach(context)
         activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                getActivity()?.finish ()
+                getActivity()?.finish()
             }
         })
     }

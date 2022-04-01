@@ -1,5 +1,7 @@
 package com.example.qoutiapp.fragment
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +15,7 @@ import com.example.qoutiapp.modelclass.Shop
 
 class BrowserFragment : Fragment() {
     private lateinit var binding: FragmentBrowserBinding
+    lateinit var  perferences: SharedPreferences
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -150,6 +153,13 @@ class BrowserFragment : Fragment() {
             )
         )
         binding.rcyItem.adapter = adapter
+
+       /* val prefs = requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
+        val countryCode = prefs.getString("countryCode","")
+        val mobilrNumber = prefs.getString("MobileNumber","")
+        val password = prefs.getString("password","")*/
+
+
 
         return binding.root
     }

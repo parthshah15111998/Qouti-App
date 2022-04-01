@@ -1,6 +1,6 @@
 package com.example.qoutiapp.modelclass
 
-data class Login(
+data class LoginRequest(
     val `data`: Data
 ) {
     data class Data(
