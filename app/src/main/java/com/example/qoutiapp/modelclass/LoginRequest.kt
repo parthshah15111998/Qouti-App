@@ -5,7 +5,7 @@ data class LoginRequest(
 ) {
     data class Data(
         val country_code: String,
-        val password: String,
-        val user_mobile: String
+        val user_mobile: String,
+        val password: String
     )
 }

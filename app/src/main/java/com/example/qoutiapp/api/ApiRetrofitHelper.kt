@@ -11,7 +11,7 @@ class ApiRetrofitHelper {
         val BASE_URL = "http://159.89.167.87/qouti/api/"
 
        val interceptor : HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
-           level = HttpLoggingInterceptor.Level.BASIC
+           level = HttpLoggingInterceptor.Level.BODY
        }
 
         val client : OkHttpClient = OkHttpClient.Builder().apply {

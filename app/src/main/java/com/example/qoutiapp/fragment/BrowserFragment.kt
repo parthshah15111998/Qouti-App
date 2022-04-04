@@ -15,7 +15,7 @@ import com.example.qoutiapp.modelclass.Shop
 
 class BrowserFragment : Fragment() {
     private lateinit var binding: FragmentBrowserBinding
-    lateinit var  perferences: SharedPreferences
+    lateinit var perferences: SharedPreferences
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -154,13 +154,10 @@ class BrowserFragment : Fragment() {
         )
         binding.rcyItem.adapter = adapter
 
-       /* val prefs = requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
-        val countryCode = prefs.getString("countryCode","")
-        val mobilrNumber = prefs.getString("MobileNumber","")
-        val password = prefs.getString("password","")*/
-
-
-
+        perferences = requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
+        perferences.getString("countryCode", "")
+        perferences.getString("MobileNumber", "")
+        
         return binding.root
     }
 

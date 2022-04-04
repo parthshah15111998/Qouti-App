@@ -1,5 +1,6 @@
 package com.example.qoutiapp.fragment
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Color
@@ -10,7 +11,6 @@ import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,15 +35,15 @@ class LoginFragment : Fragment() {
     lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        sharedPreferences = requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE)
 
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
-        sharedPreferences= requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE)
 
         val ss = SpannableString("New user? Register")
         val clickableSpan: ClickableSpan = object : ClickableSpan() {
@@ -78,34 +78,42 @@ class LoginFragment : Fragment() {
     private fun LoginApi(country_code: String, user_mobile: String, password: String) {
         val apiInterFace = ApiRetrofitHelper.retrofit.create(ApiInterFace::class.java)
 
-        val call: Call<LoginResponse?>? =
-            apiInterFace.createPost(LoginRequest.Data(country_code, user_mobile, password))
+        val call: Call<LoginResponse?>? = apiInterFace.createPost(
+            LoginRequest(
+                LoginRequest.Data(
+                    country_code, user_mobile, password
+                )
+            )
+        )
 
         call!!.enqueue(object : Callback<LoginResponse?> {
+            @SuppressLint("CommitPrefEdits")
             override fun onResponse(
                 call: Call<LoginResponse?>,
                 response: Response<LoginResponse?>
             ) {
-                val responseFromApi: LoginResponse = response.body()!!
-                if (response.isSuccessful) {
-                    val editor:SharedPreferences.Editor=sharedPreferences.edit()
-                    editor.putString("countryCode", country_code)
-                    editor.putString("MobileNumber",user_mobile)
-                    editor.putString("password",password)
-                    editor.apply()
-                    Navigation.findNavController(binding.root)
-                        .navigate(R.id.action_loginFragment_to_signUpFragment)
+                if (response.isSuccessful && response.body() != null) {
+                    val responseFromApi = response.body()!!
+                    if (responseFromApi.status == 1) {
+                        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+                        editor.putString("countryCode", responseFromApi.data.country_code)
+                        editor.putString("mobileNumber", responseFromApi.data.user_mobile)
+                        editor.apply()
+                        Navigation.findNavController(binding.root)
+                            .navigate(R.id.action_loginFragment_to_browserFragment2)
+                        Toast.makeText(context, responseFromApi.message, Toast.LENGTH_SHORT).show()
+                    }
                 } else {
+                    Toast.makeText(context, "Unsuccessful message", Toast.LENGTH_SHORT).show()
                 }
             }
-
             override fun onFailure(call: Call<LoginResponse?>, t: Throwable) {
-                Toast.makeText(context, "failur message", Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(context, "Failure message", Toast.LENGTH_SHORT).show()
             }
         })
 
     }
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
