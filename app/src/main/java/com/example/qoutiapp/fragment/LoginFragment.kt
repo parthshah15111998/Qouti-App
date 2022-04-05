@@ -115,13 +115,13 @@ class LoginFragment : Fragment() {
     }
 
 
-    override fun onAttach(context: Context) {
+   /* override fun onAttach(context: Context) {
         super.onAttach(context)
         activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 getActivity()?.finish()
             }
         })
-    }
+    }*/
 
 }

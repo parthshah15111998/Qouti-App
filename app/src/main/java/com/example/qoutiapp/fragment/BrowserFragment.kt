@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.qoutiapp.R
 import com.example.qoutiapp.adapter.MallAdapter
 import com.example.qoutiapp.databinding.FragmentBrowserBinding
 import com.example.qoutiapp.modelclass.Shop
@@ -154,9 +156,14 @@ class BrowserFragment : Fragment() {
         )
         binding.rcyItem.adapter = adapter
 
-        perferences = requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
+      /*  perferences = requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
         perferences.getString("countryCode", "")
-        perferences.getString("MobileNumber", "")
+        perferences.getString("MobileNumber", "")*/
+
+        binding.imgAccountLogo.setOnClickListener {
+            Navigation.findNavController(binding.root)
+                .navigate(R.id.loginFragment)
+        }
         
         return binding.root
     }
