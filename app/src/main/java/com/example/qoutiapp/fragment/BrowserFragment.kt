@@ -1,6 +1,7 @@
 package com.example.qoutiapp.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.qoutiapp.LoginSignUpActivity
 import com.example.qoutiapp.R
 import com.example.qoutiapp.adapter.MallAdapter
 import com.example.qoutiapp.databinding.FragmentBrowserBinding
@@ -23,6 +25,7 @@ class BrowserFragment : Fragment() {
         perferences = requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE)
 
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -162,7 +165,6 @@ class BrowserFragment : Fragment() {
         binding.rcyItem.adapter = adapter
 
 
-
         binding.imgAccountLogo.setOnClickListener {
             val editor: SharedPreferences.Editor = perferences.edit()
             perferences.getString("countryCode", "")
@@ -170,8 +172,12 @@ class BrowserFragment : Fragment() {
             editor.clear()
             editor.apply()
 
+            val intent = Intent(activity, LoginSignUpActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
+
         }
-        
+
         return binding.root
     }
 

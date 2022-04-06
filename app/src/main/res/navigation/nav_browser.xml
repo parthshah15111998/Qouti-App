@@ -10,12 +10,5 @@
         android:name="com.example.qoutiapp.fragment.BrowserFragment"
         android:label="fragment_browser"
         tools:layout="@layout/fragment_browser" >
-        <!--<action
-            android:id="@+id/action_browserFragment_to_loginSignUp"
-            app:destination="@id/nav_menu"
-            app:enterAnim="@anim/slide_in_left"
-            app:exitAnim="@anim/slide_out_right"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>-->
     </fragment>
 </navigation>

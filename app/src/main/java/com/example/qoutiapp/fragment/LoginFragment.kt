@@ -2,6 +2,7 @@ package com.example.qoutiapp.fragment
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.Typeface
@@ -18,6 +19,8 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.example.qoutiapp.BrowserActivity
+import com.example.qoutiapp.LoginSignUpActivity
 import com.example.qoutiapp.R
 import com.example.qoutiapp.api.ApiInterFace
 import com.example.qoutiapp.api.ApiRetrofitHelper
@@ -65,6 +68,7 @@ class LoginFragment : Fragment() {
             ) {
                 Toast.makeText(context, "Please enter both the values", Toast.LENGTH_SHORT).show()
             } else {
+                binding.progressBar.visibility=View.VISIBLE
                 LoginApi(
                     binding.etPhoneNumber.prefixText.toString(),
                     binding.etPhoneNumber.editText?.text.toString(),
@@ -76,6 +80,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun LoginApi(country_code: String, user_mobile: String, password: String) {
+
         val apiInterFace = ApiRetrofitHelper.retrofit.create(ApiInterFace::class.java)
 
         val call: Call<LoginResponse?>? = apiInterFace.createPost(
@@ -94,13 +99,15 @@ class LoginFragment : Fragment() {
             ) {
                 if (response.isSuccessful && response.body() != null) {
                     val responseFromApi = response.body()!!
+                    binding.progressBar.visibility=View.GONE
                     if (responseFromApi.status == 1) {
                         val editor: SharedPreferences.Editor = sharedPreferences.edit()
                         editor.putString("countryCode", responseFromApi.data.country_code)
                         editor.putString("mobileNumber", responseFromApi.data.user_mobile)
                         editor.apply()
-                        Navigation.findNavController(binding.root)
-                            .navigate(R.id.action_loginFragment_to_signUpFragment)
+                        val intent = Intent(activity, BrowserActivity::class.java)
+                        startActivity(intent)
+                        activity?.finish()
                         Toast.makeText(context, responseFromApi.message, Toast.LENGTH_SHORT).show()
                     }
                 } else {
