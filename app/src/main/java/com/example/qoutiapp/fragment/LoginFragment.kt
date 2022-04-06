@@ -100,7 +100,7 @@ class LoginFragment : Fragment() {
                         editor.putString("mobileNumber", responseFromApi.data.user_mobile)
                         editor.apply()
                         Navigation.findNavController(binding.root)
-                            .navigate(R.id.action_loginFragment_to_browserFragment2)
+                            .navigate(R.id.action_loginFragment_to_signUpFragment)
                         Toast.makeText(context, responseFromApi.message, Toast.LENGTH_SHORT).show()
                     }
                 } else {
@@ -108,20 +108,20 @@ class LoginFragment : Fragment() {
                 }
             }
             override fun onFailure(call: Call<LoginResponse?>, t: Throwable) {
-                Toast.makeText(context, "Failure message", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Wrong Password And MobileNumber", Toast.LENGTH_SHORT).show()
             }
         })
 
     }
 
 
-   /* override fun onAttach(context: Context) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 getActivity()?.finish()
             }
         })
-    }*/
+    }
 
 }

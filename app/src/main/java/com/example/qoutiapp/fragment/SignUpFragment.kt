@@ -77,7 +77,7 @@ class SignUpFragment : Fragment() {
 
         binding.btnRegister.setOnClickListener {
             Navigation.findNavController(binding.root)
-                .navigate(R.id.action_signUpFragment_to_browserFragment2)
+                .navigate(R.id.action_signUpFragment_to_loginFragment)
         }
 
         return binding.root

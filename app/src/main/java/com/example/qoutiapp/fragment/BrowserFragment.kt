@@ -18,6 +18,11 @@ import com.example.qoutiapp.modelclass.Shop
 class BrowserFragment : Fragment() {
     private lateinit var binding: FragmentBrowserBinding
     lateinit var perferences: SharedPreferences
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        perferences = requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE)
+
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -156,13 +161,15 @@ class BrowserFragment : Fragment() {
         )
         binding.rcyItem.adapter = adapter
 
-      /*  perferences = requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE);
-        perferences.getString("countryCode", "")
-        perferences.getString("MobileNumber", "")*/
+
 
         binding.imgAccountLogo.setOnClickListener {
-            Navigation.findNavController(binding.root)
-                .navigate(R.id.loginFragment)
+            val editor: SharedPreferences.Editor = perferences.edit()
+            perferences.getString("countryCode", "")
+            perferences.getString("MobileNumber", "")
+            editor.clear()
+            editor.apply()
+
         }
         
         return binding.root
