@@ -172,8 +172,8 @@ class BrowserFragment : Fragment() {
             editor.clear()
             editor.apply()
 
-            val intent = Intent(activity, LoginSignUpActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(activity, LoginSignUpActivity::class.java))
+            activity?.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
             activity?.finish()
 
         }
